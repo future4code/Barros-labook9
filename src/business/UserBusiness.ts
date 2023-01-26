@@ -1,6 +1,5 @@
-import { UserDatabase } from "../data/UserDatabase";
 import { CustomError } from "../error/CustomError"
-import { UserCreateDTO, UserInputDTO } from "../model/UserDTO";
+import { UserCreateDTO, UserInputDTO } from "../model/UserDTO"
 import { generateId } from "../services/idGenerator";
 import { UseRepository } from "./UserRepository";
 
