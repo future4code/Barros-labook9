@@ -2,9 +2,10 @@ import { UserDatabase } from "../data/UserDatabase";
 import { CustomError } from "../error/CustomError"
 import { UserCreateDTO, UserInputDTO } from "../model/UserDTO";
 import { generateId } from "../services/idGenerator";
+import { UseRepository } from "./UserRepository";
 
 export class UserBusiness {
-    userDatabase = new UserDatabase()
+  constructor(private  userDatabase:UseRepository){}
 
     createUser = async ({ name, email, password }: UserInputDTO) => {
         try {

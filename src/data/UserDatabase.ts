@@ -1,8 +1,9 @@
+import { UseRepository } from "../business/UserRepository";
 import { CustomError } from "../error/CustomError";
 import { UserCreateDTO } from "../model/UserDTO";
 import { BaseDatabase } from "./BaseDatabase";
 
-export class UserDatabase extends BaseDatabase {
+export class UserDatabase extends BaseDatabase implements UseRepository {
     private static TABLE_NAME = "labook_users"
 
     create = async ({ id, name, email, password }: UserCreateDTO) => {
