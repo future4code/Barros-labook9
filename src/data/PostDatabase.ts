@@ -21,8 +21,15 @@ export class PostDatabase extends BaseDatabase implements  PostRepository{
         }
     }
 
-    getAll=async()=>{
-
+    getAll=async(id:string)=>{
+        try{
+            const result = await PostDatabase.connection.select('*').where(id)
+            console.log(result);
+            
+            return (result)
+        }catch(error: any){
+            throw new CustomError(error.statusCode, error.message)
+        }
     }
 
 

@@ -7,6 +7,8 @@ app.use("", userRouter)
 
 app.use("", postRouter)
 
+app.use("/posts", postRouter)
+
 // import express, { Express, Request, Response } from "express"
 // import cors from "cors"
 // import knex from "knex"
