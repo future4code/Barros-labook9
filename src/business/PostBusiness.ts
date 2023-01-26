@@ -37,21 +37,11 @@ export class PostBusiness {
             const postId = await this.postDatabase.getAll(id)
             console.log(postId[0]);
 
-            if (!postId[0]) {
+            if (postId.length > 0) {
                 throw new CustomError(404, "Post not found");
             }
-            // const queryResult = {
-            //     id: postId[0].id,
-            //     photo: postId[0].photo,
-            //     description: postId[0].description,
-            //     type: postId[0].type,
-            //     createdAt: postId[0].createdAt,
-            //     authorId: postId[0].author_id
-            // }
-            // console.log(queryResult);
-            console.log(postId);
+         
             return (postId)
-            // return (queryResult)
 
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
