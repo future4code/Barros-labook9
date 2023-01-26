@@ -1,7 +1,11 @@
 import { app } from "./app"
+import { postRouter } from "./routes/postRouter"
 import { userRouter } from "./routes/userRouter"
 
+
 app.use("", userRouter)
+
+app.use("", postRouter)
 
 // import express, { Express, Request, Response } from "express"
 // import cors from "cors"
