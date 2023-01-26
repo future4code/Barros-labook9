@@ -23,6 +23,6 @@ Astrodev</br>
 
 ## Requisitos:
 
-✅  Cadastrar novo usuário;
-    Criar post;
-    Buscar post por Id;
+✅  Cadastrar novo usuário;</br>
+✅  Criar post;</br>
+✅  Buscar post por Id;</br>
