@@ -1,8 +1,9 @@
 import { CustomError } from "../error/CustomError";
 import { PostCreateDTO } from "../model/postDTO";
 import { BaseDatabase } from "./BaseDatabase";
+import {PostRepository} from "../business/PostRepository"
 
-export class PostDatabase extends BaseDatabase {
+export class PostDatabase extends BaseDatabase implements  PostRepository{
     private static TABLE_NAME = "labook_posts";
 
     create = async ({ id, photo, description, type, authorId }: PostCreateDTO) => {
@@ -18,6 +19,10 @@ export class PostDatabase extends BaseDatabase {
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }
+    }
+
+    getAll=async()=>{
+
     }
 
 
