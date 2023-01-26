@@ -14,6 +14,7 @@ export class UserBusiness {
             if (password.length <= 6) {
                 throw new CustomError(400, "Password must be at least 7 characters");
             }
+           
             const id = generateId()
 
             const insertUser: UserCreateDTO = {

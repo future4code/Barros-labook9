@@ -5,7 +5,7 @@ import { BaseDatabase } from "./BaseDatabase";
 export class UserDatabase extends BaseDatabase {
     private static TABLE_NAME = "labook_users"
 
-    create = async ({ id, name, email, password }: UserCreateDTO): Promise<void> => {
+    create = async ({ id, name, email, password }: UserCreateDTO) => {
         try {
             await UserDatabase.connection.insert({
                 id: id,
@@ -18,4 +18,5 @@ export class UserDatabase extends BaseDatabase {
             throw new CustomError(error.statusCode, error.message)
         }
     }
+
 }
