@@ -40,17 +40,18 @@ export class PostBusiness {
             if (!postId[0]) {
                 throw new CustomError(404, "Post not found");
             }
-            const queryResult = {
-                id: postId[0].id,
-                photo: postId[0].photo,
-                description: postId[0].description,
-                type: postId[0].type,
-                createdAt: postId[0].createdAt,
-                authorId: postId[0].author_id
-            }
-            console.log(queryResult);
-            
-            return queryResult
+            // const queryResult = {
+            //     id: postId[0].id,
+            //     photo: postId[0].photo,
+            //     description: postId[0].description,
+            //     type: postId[0].type,
+            //     createdAt: postId[0].createdAt,
+            //     authorId: postId[0].author_id
+            // }
+            // console.log(queryResult);
+            console.log(postId);
+            return (postId)
+            // return (queryResult)
 
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
