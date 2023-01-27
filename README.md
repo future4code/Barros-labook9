@@ -26,3 +26,4 @@ Astrodev</br>
 ✅  Cadastrar novo usuário;</br>
 ✅  Criar post;</br>
 ✅  Buscar post por Id;</br>
+✅  Fazer amizade;</br>

@@ -11,8 +11,13 @@ export class FriendBusiness {
             if (!userId) {
                 throw new CustomError(400, "Params invalid! userId");
             }
-            if(!userAddId) {
+            if (!userAddId) {
                 throw new CustomError(400, "Body invalid! userAddId");
+            }
+            const verificationUserId = await this.friendDatabase.getAll(userId, userAddId)
+
+            if (verificationUserId) {
+                throw new CustomError(400, "Friendship already exists");
             }
 
             const id = generateId()

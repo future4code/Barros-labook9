@@ -3,10 +3,10 @@ import { CreateFriendDTO } from "../model/friendDTO";
 import { BaseDatabase } from "./BaseDatabase";
 
 export class FriendDatabase extends BaseDatabase {
-    private static TABLE_NAME= "labook_friend";
+    private static TABLE_NAME = "labook_friend";
 
-    create = async ({id, userId, userAddId}:CreateFriendDTO)=>{
-        try{
+    create = async ({ id, userId, userAddId }: CreateFriendDTO) => {
+        try {
 
             await FriendDatabase.connection.insert({
                 id: id,
@@ -14,7 +14,22 @@ export class FriendDatabase extends BaseDatabase {
                 user_add_id: userAddId
             }).into(FriendDatabase.TABLE_NAME)
 
-        }catch(error:any){
+        } catch (error: any) {
+            throw new CustomError(error.statusCode, error.message)
+        }
+    }
+
+    getAll = async (userId: string, userAddId: string) => {
+        try {
+            const result = await FriendDatabase.connection()
+                .select("*")
+                .from(FriendDatabase.TABLE_NAME)
+                .where({
+                    user_id: userId,
+                    user_add_id: userAddId
+                })
+            return (result[0])
+        } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }
     }

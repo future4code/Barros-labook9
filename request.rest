@@ -2,8 +2,8 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name":"Maria",
-    "email":"maria@labenu.com",
+    "name":"Camila Prado",
+    "email":"mila@labenu.com",
     "password":"12345678"
 }
 
@@ -23,9 +23,9 @@ Content-Type: application/json
 GET http://localhost:3003/posts/1674738291636
 
 ###
-POST http://localhost:3003/friend/1674738291636
+POST http://localhost:3003/friend/29a7c461-39e8-4a0d-b655-066c761a7afd
 Content-Type: application/json
 
 {
-    "userAddId": "b80230ad-df74-4142-b05c-70c6b865e82f"
+    "userAddId": "e7035d9c-24db-4e94-bbbb-ea676319c325"
 }
