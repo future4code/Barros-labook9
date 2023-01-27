@@ -8,9 +8,13 @@ export class FriendBusiness {
 
     createFriend = async ({ userId, userAddId }: InputFriendDTO) => {
         try {
-            if (!userId || !userAddId) {
-                throw new CustomError(400, "Body invalid! userId or userAddId.");
+            if (!userId) {
+                throw new CustomError(400, "Params invalid! userId");
             }
+            if(!userAddId) {
+                throw new CustomError(400, "Body invalid! userAddId");
+            }
+
             const id = generateId()
 
             const insertFriend: CreateFriendDTO = {

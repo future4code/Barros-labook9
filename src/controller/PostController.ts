@@ -23,17 +23,16 @@ export class PostController {
         }
     }
 
-    getAllPost=async(req:Request, res:Response)=>{
-        try{
+    getAllPost = async (req: Request, res: Response) => {
+        try {
 
             const id = req.params.id as string
-            
+
             const postId = await this.postBusiness.getAllPost(id)
-            console.log(postId);
-            
+           
             res.status(200).send(postId)
 
-        }catch(error:any){
+        } catch (error: any) {
             res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
 
         }
