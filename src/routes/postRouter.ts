@@ -7,7 +7,7 @@ import { PostDatabase } from "../data/PostDatabase";
 export const postRouter = express.Router();
 const postDatabase = new PostDatabase()
 
-const postBusiness = new PostBusiness()
+const postBusiness = new PostBusiness(postDatabase)
 
 const postController = new PostController(postBusiness)
 

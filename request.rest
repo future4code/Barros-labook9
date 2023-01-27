@@ -13,11 +13,13 @@ POST http://localhost:3003/post
 Content-Type: application/json
 
 {
-    "photo": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
-    "description": "testando use repository",
+    "photo": "https://i.picsum.photos/id/0/5618/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
+    "description": "testando repository",
     "type":"event",
     "authorId": "1674738291636"
 }
 
 ###
-GET http://localhost:3003/posts/1674741235941
+GET http://localhost:3003/posts/1674738291636
+
+###

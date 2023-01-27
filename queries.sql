@@ -1,3 +1,4 @@
+-- Active: 1674084192186@@35.226.146.116@3306@jbl-4416152-caroline-martins
    CREATE TABLE IF NOT EXISTS labook_users(
          id VARCHAR(255) PRIMARY KEY,
          name VARCHAR(255) NOT NULL,
@@ -13,4 +14,12 @@
          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
          author_id VARCHAR(255),
          FOREIGN KEY (author_id) REFERENCES labook_users (id)
+      );
+
+      CREATE TABLE IF NOT EXISTS labook_friend(
+         id VARCHAR(255) PRIMARY KEY,
+         user_id VARCHAR(255) ,
+         user_add_id VARCHAR(255) ,
+         FOREIGN KEY (user_id) REFERENCES labook_users (id),
+         FOREIGN KEY (user_add_id) REFERENCES labook_users (id)
       )
