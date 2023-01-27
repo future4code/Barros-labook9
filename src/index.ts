@@ -1,4 +1,5 @@
 import { app } from "./app"
+import { friendRouter } from "./routes/friendRouter"
 import { postRouter } from "./routes/postRouter"
 import { userRouter } from "./routes/userRouter"
 
@@ -9,6 +10,7 @@ app.use("", postRouter)
 
 app.use("/posts", postRouter)
 
+app.use("/friend", friendRouter)
 
 /**************************** TYPES ******************************/
 
