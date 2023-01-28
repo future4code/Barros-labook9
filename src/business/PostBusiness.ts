@@ -1,4 +1,3 @@
-import { PostDatabase } from "../data/PostDatabase";
 import { CustomError } from "../error/CustomError";
 import { PostCreateDTO, PostInputDTO } from "../model/postDTO";
 import { generateId } from "../services/idGenerator";
