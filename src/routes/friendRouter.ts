@@ -12,3 +12,5 @@ const friendBusiness = new FriendBusiness(friendDatabase)
 const friendController = new FriendController(friendBusiness)
 
 friendRouter.post("/:userId",(req,res)=> friendController.createFriend(req,res))
+
+friendRouter.delete("/delete",(req,res)=> friendController.deleteFriend(req,res))

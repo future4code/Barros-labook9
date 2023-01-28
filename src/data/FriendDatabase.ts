@@ -28,9 +28,27 @@ export class FriendDatabase extends BaseDatabase {
                     user_id: userId,
                     user_add_id: userAddId
                 })
+                
             return (result[0])
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }
     }
+
+    delete=async(userId:string, userAddId:string):Promise<any>=>{
+
+        try{
+
+            const result =await FriendDatabase.connection()
+              .delete()
+              .from(FriendDatabase.TABLE_NAME)
+              .where({ user_id:userId, user_add_id:userAddId })
+            console.log(result);
+            
+              return (result)
+        }catch(error:any){
+            throw new CustomError(error.statusCode, error.message)
+        }
+    }
+
 }

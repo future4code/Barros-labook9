@@ -35,7 +35,26 @@ export class FriendBusiness {
         }
     }
 
+    deleteFriend = async ({ userId, userAddId }: InputFriendDTO) => {
+        try {
 
+            if (!userId || !userAddId) {
+                throw new CustomError(400, "invalid! userId or userAddId");
+            }
+
+            const verificationUserId = await this.friendDatabase.getAll(userId, userAddId)
+
+            if (!verificationUserId) {
+                throw new CustomError(400, "Friendship not exists");
+            } else {
+                await this.friendDatabase.delete(userId, userAddId)
+            }
+
+        } catch (error: any) {
+
+            throw new CustomError(error.statusCode, error.message)
+        }
+    }
 
 
 }

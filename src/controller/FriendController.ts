@@ -22,4 +22,18 @@ export class FriendController {
         }
 
     }
+
+    deleteFriend = async(req:Request, res:Response)=>{
+        try{
+        const {userId, userAddId} = req.body
+
+        await this.friendBusiness.deleteFriend({userId:userId,userAddId:userAddId})
+         
+
+        res.status(200).send("successfully broken friendship!")
+        }catch(error:any){
+            res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
+
+        }
+    }
 }
