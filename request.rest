@@ -35,6 +35,6 @@ DELETE http://localhost:3003/friend/delete
 Content-Type: application/json
 
 {
-    "userId":"1674738291636",
-    "userAddId": "29a7c461-39e8-4a0d-b655-066c761a7afd"
+    "userId":"29a7c461-39e8-4a0d-b655-066c761a7afd",
+    "userAddId": "e7035d9c-24db-4e94-bbbb-ea676319c325"
 }

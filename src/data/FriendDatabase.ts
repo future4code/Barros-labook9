@@ -35,7 +35,7 @@ export class FriendDatabase extends BaseDatabase {
         }
     }
 
-    delete=async(userId:string, userAddId:string):Promise<any>=>{
+    delete=async(userId:string, userAddId:string):Promise<void>=>{
 
         try{
 
@@ -43,9 +43,7 @@ export class FriendDatabase extends BaseDatabase {
               .delete()
               .from(FriendDatabase.TABLE_NAME)
               .where({ user_id:userId, user_add_id:userAddId })
-            console.log(result);
-            
-              return (result)
+
         }catch(error:any){
             throw new CustomError(error.statusCode, error.message)
         }

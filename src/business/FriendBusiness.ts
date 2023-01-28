@@ -44,7 +44,7 @@ export class FriendBusiness {
 
             const verificationUserId = await this.friendDatabase.getAll(userId, userAddId)
 
-            if (!verificationUserId) {
+            if (typeof verificationUserId === "undefined"){
                 throw new CustomError(400, "Friendship not exists");
             } else {
                 await this.friendDatabase.delete(userId, userAddId)
