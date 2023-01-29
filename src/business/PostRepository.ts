@@ -5,4 +5,6 @@ export interface PostRepository{
     create ({ id, photo, description, type, authorId }: PostCreateDTO):Promise<void>
 
     getAll (id:string):Promise<any[]>
+
+    // feed (userId: string):Promise<any[]>
 }

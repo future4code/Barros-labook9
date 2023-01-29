@@ -2,8 +2,8 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name":"Maria",
-    "email":"maria@labenu.com",
+    "name":"Camila Prado",
+    "email":"mila@labenu.com",
     "password":"12345678"
 }
 
@@ -13,11 +13,49 @@ POST http://localhost:3003/post
 Content-Type: application/json
 
 {
-    "photo": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
-    "description": "testando use repository",
+    "photo": "https://i.picsum.photos/id/0/5618/3744.jpg",
+    "description": "aqui",
     "type":"event",
-    "authorId": "1674738291636"
+    "authorId": "b80230ad-df74-4142-b05c-70c6b865e82f"
 }
 
 ###
-GET http://localhost:3003/posts/1674741235941
+GET http://localhost:3003/posts/1674738291636
+
+###
+POST http://localhost:3003/friend/29a7c461-39e8-4a0d-b655-066c761a7afd
+Content-Type: application/json
+
+{
+    "userAddId": "e7035d9c-24db-4e94-bbbb-ea676319c325"
+}
+
+###
+DELETE http://localhost:3003/friend/delete
+Content-Type: application/json
+
+{
+    "userId":"29a7c461-39e8-4a0d-b655-066c761a7afd",
+    "userAddId": "e7035d9c-24db-4e94-bbbb-ea676319c325"
+}
+
+###
+# GET http://localhost:3003/feed/friend
+# Content-Type: application/json
+
+# {
+
+#     "userId":"1674738291636",
+#     "userAddId": "b80230ad-df74-4142-b05c-70c6b865e82f"
+
+# }
+
+# GET http://localhost:3003/feed
+# Content-Type: application/json
+
+# {
+#     "userId":"1674738291636"
+# }
+
+GET http://localhost:3003/feed/1674738291636
+Content-Type: application/json
