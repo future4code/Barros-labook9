@@ -14,3 +14,5 @@ const postController = new PostController(postBusiness)
 postRouter.post("/post",(req,res)=> postController.createPost(req,res))
 
 postRouter.get("/:id",(req,res)=> postController.getAllPost(req,res))
+
+postRouter.get("/:userId",(req,res)=> postController.postFriend(req,res))

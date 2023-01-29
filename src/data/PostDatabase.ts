@@ -35,7 +35,7 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
         }
     }
 
-    feed = async (id: string) => {
+    feed = async (userId: string) => {
         try {
 
             const result = await PostDatabase.connection.raw(`
@@ -45,12 +45,15 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
             post.type,
             post.created_at, 
             post.author_id , 
-            user.name from ${PostDatabase.TABLE_NAME} post
+            user.name 
+            FROM labook_posts post
             JOIN labook_users user ON post.author_id = user.id
             JOIN labook_friend friend ON post.author_id = friend.user_add_id OR post.author_id = friend.user_id
-            WHERE (friend.user_id = ${id} OR friend.user_add_id = ${id}) AND post.author_id <> ${id}
+            WHERE (friend.user_id=${userId} OR friend.user_add_id=${userId}) AND post.author_id <> ${userId}
             ORDER BY created_at DESC;
             `)
+            console.log(result);
+            
             return (result[0])
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)

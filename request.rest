@@ -38,3 +38,24 @@ Content-Type: application/json
     "userId":"29a7c461-39e8-4a0d-b655-066c761a7afd",
     "userAddId": "e7035d9c-24db-4e94-bbbb-ea676319c325"
 }
+
+###
+# GET http://localhost:3003/feed/friend
+# Content-Type: application/json
+
+# {
+
+#     "userId":"1674738291636",
+#     "userAddId": "b80230ad-df74-4142-b05c-70c6b865e82f"
+
+# }
+
+# GET http://localhost:3003/feed/friend
+# Content-Type: application/json
+
+# {
+#     "userId":"b80230ad-df74-4142-b05c-70c6b865e82f"
+# }
+
+GET http://localhost:3003/feed/1674738291636
+Content-Type: application/json

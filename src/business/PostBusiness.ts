@@ -45,10 +45,10 @@ export class PostBusiness {
         }
     }
 
-    feedFriend=async (id:string) =>{
+    feedFriend=async (userId:string) =>{
         try{
 
-       const result = await this.postDatabase.feed(id)
+       const result = await this.postDatabase.feed(userId)
             return(result)
 
         }catch(error:any){
