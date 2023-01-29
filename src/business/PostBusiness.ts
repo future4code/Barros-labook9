@@ -45,10 +45,11 @@ export class PostBusiness {
         }
     }
 
-    feedFriend=(id:string) =>{
+    feedFriend=async (id:string) =>{
         try{
-            
 
+       const result = await this.postDatabase.feed(id)
+            return(result)
 
         }catch(error:any){
             throw new CustomError(error.statusCode, error.message)
