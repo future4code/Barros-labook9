@@ -1,3 +1,4 @@
+import { PostDatabase } from "../data/PostDatabase";
 import { CustomError } from "../error/CustomError";
 import { PostCreateDTO, PostInputDTO } from "../model/postDTO";
 import { generateId } from "../services/idGenerator";
@@ -47,8 +48,10 @@ export class PostBusiness {
 
     feedFriend=async (userId:string) =>{
         try{
-
-       const result = await this.postDatabase.feed(userId)
+        const postDatabase = new PostDatabase()
+            console.log(userId);
+       const result = await postDatabase.feed(userId)
+       
             return(result)
 
         }catch(error:any){

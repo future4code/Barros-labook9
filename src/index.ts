@@ -16,6 +16,8 @@ app.use("/friend", friendRouter)
 
 app.use("/feed", postRouter)
 
+// app.use("", postRouter)
+
 /**************************** TYPES ******************************/
 
 type authenticationData = {

@@ -50,11 +50,11 @@ Content-Type: application/json
 
 # }
 
-# GET http://localhost:3003/feed/friend
+# GET http://localhost:3003/feed
 # Content-Type: application/json
 
 # {
-#     "userId":"b80230ad-df74-4142-b05c-70c6b865e82f"
+#     "userId":"1674738291636"
 # }
 
 GET http://localhost:3003/feed/1674738291636

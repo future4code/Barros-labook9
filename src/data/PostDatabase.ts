@@ -39,13 +39,7 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
         try {
 
             const result = await PostDatabase.connection.raw(`
-            SELECT post.id, 
-            post.photo, 
-            post.description,
-            post.type,
-            post.created_at, 
-            post.author_id , 
-            user.name 
+            SELECT post.id,post.photo, post.description,post.type,post.created_at, post.author_id ,user.name
             FROM labook_posts post
             JOIN labook_users user ON post.author_id = user.id
             JOIN labook_friend friend ON post.author_id = friend.user_add_id OR post.author_id = friend.user_id
@@ -53,8 +47,9 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
             ORDER BY created_at DESC;
             `)
             console.log(result);
+            console.log(userId);
             
-            return (result[0])
+            return (result)
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }
