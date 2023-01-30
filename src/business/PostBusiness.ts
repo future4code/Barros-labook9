@@ -49,8 +49,10 @@ export class PostBusiness {
     feedFriend=async (userId:string) =>{
         try{
         const postDatabase = new PostDatabase()
+
             console.log(userId);
        const result = await postDatabase.feed(userId)
+       console.log(result);
        
             return(result)
 
