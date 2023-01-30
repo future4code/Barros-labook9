@@ -49,7 +49,7 @@ export class PostController {
             const postFriend = await this.postBusiness.feedFriend(userId)
                 console.log(postFriend);
 
-            res.status(200).send(postFriend)
+            res.status(200).send(`${postFriend} aqui`)
 
         }catch(error:any){
             res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
