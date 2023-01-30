@@ -54,4 +54,18 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
             throw new CustomError(error.statusCode, error.message)
         }
     }
+
+    getAllType = async (type:string) => {
+        try {
+
+            const result = await PostDatabase.connection.raw(`
+            SELECT * FROM ${PostDatabase.TABLE_NAME} WHERE ${type}
+            `)
+
+            return (result)
+
+        } catch (error: any) {
+            throw new CustomError(error.statusCode, error.message)
+        }
+    }
 }
