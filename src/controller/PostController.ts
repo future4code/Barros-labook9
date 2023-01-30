@@ -41,15 +41,11 @@ export class PostController {
 
     feedFriend=async(req:Request, res:Response)=>{
         try{
-            // const userId = req.body.userId as string
             const userId = req.params.userId as string
-                console.log(userId);
-                
-            // const {userId, userAddId} = req.body
+         
             const postFriend = await this.postBusiness.feedFriend(userId)
-                console.log(postFriend);
 
-            res.status(200).send(`${postFriend} aqui`)
+            res.status(200).send(postFriend)
 
         }catch(error:any){
             res.status(error.statusCode || 400).send(error.message || error.sqlMessage)

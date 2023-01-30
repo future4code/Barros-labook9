@@ -36,7 +36,7 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
     }
 
     feed = async (userId: string):Promise<string[]> => {
-        console.log(userId);
+        
         try {
 
             const result = await PostDatabase.connection.raw(`
@@ -46,8 +46,8 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
             JOIN labook_friend friend ON post.author_id = friend.user_add_id OR post.author_id = friend.user_id
             WHERE (friend.user_id=${userId} OR friend.user_add_id=${userId}) AND post.author_id <> ${userId}
             ORDER BY created_at DESC;
-            `)         
-            return (result)
+            `)  
+            return (result[0])
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }

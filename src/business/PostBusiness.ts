@@ -38,7 +38,7 @@ export class PostBusiness {
             if (postId.length < 0) {
                 throw new CustomError(404, "Post not found");
             }
-         
+
             return (postId)
 
         } catch (error: any) {
@@ -46,17 +46,14 @@ export class PostBusiness {
         }
     }
 
-    feedFriend=async (userId:string) =>{
-        try{
-        const postDatabase = new PostDatabase()
+    feedFriend = async (userId: string) => {
+        try {
+         
+            const result = await this.postDatabase.feed(userId)
 
-            console.log(userId);
-       const result = await postDatabase.feed(userId)
-       console.log(result);
-       
-            return(result)
+            return (result)
 
-        }catch(error:any){
+        } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }
     }

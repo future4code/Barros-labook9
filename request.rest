@@ -1,3 +1,4 @@
+//CRIA USER
 POST http://localhost:3003/users
 Content-Type: application/json
 
@@ -8,7 +9,7 @@ Content-Type: application/json
 }
 
 ###
-
+//CRIA POST
 POST http://localhost:3003/post
 Content-Type: application/json
 
@@ -20,9 +21,11 @@ Content-Type: application/json
 }
 
 ###
+//BUSCA POSTS DE UM USER ESPECIFICO
 GET http://localhost:3003/posts/1674738291636
 
 ###
+//CRIA AMIZADE
 POST http://localhost:3003/friend/1674738291636
 Content-Type: application/json
 
@@ -31,6 +34,7 @@ Content-Type: application/json
 }
 
 ###
+//DELETA AMIZADE
 DELETE http://localhost:3003/friend/delete
 Content-Type: application/json
 
@@ -40,22 +44,7 @@ Content-Type: application/json
 }
 
 ###
-# GET http://localhost:3003/feed/friend
-# Content-Type: application/json
 
-# {
-
-#     "userId":"1674738291636",
-#     "userAddId": "b80230ad-df74-4142-b05c-70c6b865e82f"
-
-# }
-
-# GET http://localhost:3003/feed
-# Content-Type: application/json
-
-# {
-#     "userId":"1674738291636"
-# }
-
+//BUSCA FEED DE AMIGOS DE UM DETERMINADO USER
 GET http://localhost:3003/feed/1674738291636
 Content-Type: application/json
