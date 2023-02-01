@@ -48,3 +48,13 @@ Content-Type: application/json
 //BUSCA FEED DE AMIGOS DE UM DETERMINADO USER
 GET http://localhost:3003/feed/1674738291636
 Content-Type: application/json
+
+
+// BUSCAR FEED POR TYPE
+###
+GET http://localhost:3003/post/type
+Content-Type: application/json
+
+{
+    "type":"NORMAL"
+}

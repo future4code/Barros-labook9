@@ -17,6 +17,12 @@ app.use("/friend", friendRouter)
 
 app.use("/feed", feedRouter)
 
+// app.use("/teste", testeRouter)
+
+app.use("", feedRouter)
+
+
+
 
 /**************************** TYPES ******************************/
 

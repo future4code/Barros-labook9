@@ -7,4 +7,6 @@ export interface PostRepository{
     getAll (id:string):Promise<any[]>
 
     feed (userId: string):Promise<any[]>
+
+    getType (type:string):Promise<any[]>
 }

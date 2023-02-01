@@ -51,4 +51,22 @@ export class PostController {
             res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
         }
     }
+
+    PostType=async(req:Request, res:Response)=>{
+        try{
+
+        const type = req.body.type as string
+           
+            
+        const postType = await this.postBusiness.PostType(type)
+        // console.log(postType);
+        res.status(200).send(postType)
+
+
+        }catch(error:any){
+            console.log("caiu aqu");
+            
+            res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
+        }
+    }
 }

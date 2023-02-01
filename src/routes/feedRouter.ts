@@ -12,3 +12,5 @@ const postBusiness = new PostBusiness(postDatabase)
 const postController = new PostController(postBusiness)
 
 feedRouter.get("/:userId",(req,res)=> postController.feedFriend(req,res))
+
+feedRouter.get("/post/type",(req,res)=> postController.PostType(req,res))

@@ -1,4 +1,3 @@
-import { normalize } from "path";
 import { PostDatabase } from "../data/PostDatabase";
 import { CustomError } from "../error/CustomError";
 import { PostCreateDTO, PostInputDTO } from "../model/postDTO";
@@ -7,14 +6,14 @@ import { PostRepository } from "./PostRepository";
 
 export class PostBusiness {
     constructor(private postDatabase: PostRepository) { }
-    // postDatabase = new PostDatabase();
+    // postDatabaseteste = new PostDatabase();
 
     createPost = async ({ photo, description, type, authorId }: PostInputDTO) => {
         try {
             if (!photo || !description || !type || !authorId) {
                 throw new CustomError(400, "Body invalid! photo or description or type or authorId.");
             }
-            if(type.toUpperCase() !== "normal".toUpperCase() && type.toUpperCase() !== "event".toUpperCase()){
+            if (type.toUpperCase() !== "normal".toUpperCase() && type.toUpperCase() !== "event".toUpperCase()) {
                 throw new CustomError(400, "Type invalid, normal or event.");
             }
             const postId = generateId()
@@ -51,8 +50,22 @@ export class PostBusiness {
 
     feedFriend = async (userId: string) => {
         try {
-         
+
             const result = await this.postDatabase.feed(userId)
+
+            return (result)
+
+        } catch (error: any) {
+            throw new CustomError(error.statusCode, error.message)
+        }
+    }
+
+    PostType = async (type: string) => {
+        try {
+            if (type.toUpperCase() !== "normal".toUpperCase() && type.toUpperCase() !== "event".toUpperCase()) {
+                throw new CustomError(400, "Type invalid, normal or event.");
+            }
+            const result = await this.postDatabase.getType(type)
 
             return (result)
 
