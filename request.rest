@@ -15,9 +15,9 @@ Content-Type: application/json
 
 {
     "photo": "https://i.picsum.photos/id/0/5618/3744.jpg",
-    "description": "POST  BANANINHA NÃO AMIGA",
-    "type":"NORMAL",
-    "authorId": "e7035d9c-24db-4e94-bbbb-ea676319c325"
+    "description": "POST  evten CAMILA 2",
+    "type":"EVENT",
+    "authorId": "29a7c461-39e8-4a0d-b655-066c761a7afd"
 }
 
 ###

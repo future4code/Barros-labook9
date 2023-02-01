@@ -28,3 +28,4 @@ Astrodev</br>
 ✅  Buscar post por Id;</br>
 ✅  Fazer amizade;</br>
 ✅  Desfazer amizade;</br>
+✅  Ver todo o feed somente dos amigos;</br>

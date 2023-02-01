@@ -1,3 +1,4 @@
+import { normalize } from "path";
 import { PostDatabase } from "../data/PostDatabase";
 import { CustomError } from "../error/CustomError";
 import { PostCreateDTO, PostInputDTO } from "../model/postDTO";
@@ -13,7 +14,9 @@ export class PostBusiness {
             if (!photo || !description || !type || !authorId) {
                 throw new CustomError(400, "Body invalid! photo or description or type or authorId.");
             }
-
+            if(type.toUpperCase() !== "normal".toUpperCase() && type.toUpperCase() !== "event".toUpperCase()){
+                throw new CustomError(400, "Type invalid, normal or event.");
+            }
             const postId = generateId()
 
             const insertPost: PostCreateDTO = {
