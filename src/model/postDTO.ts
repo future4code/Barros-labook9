@@ -23,3 +23,8 @@ export interface LikePostDTO{
     userId: string;
     postId: string
 }
+
+export interface InputLikePostDTO{
+    userId: string;
+    postId: string
+}

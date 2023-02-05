@@ -1,12 +1,12 @@
 import { CustomError } from "../error/CustomError";
-import { LikePostDTO } from "../model/postDTO";
+import { InputLikePostDTO, LikePostDTO } from "../model/postDTO";
 import { generateId } from "../services/idGenerator";
 import { LikePostRepository } from "./LikePostRepository";
 
 export class LikePostBusiness{
     constructor(private likePostDatabase: LikePostRepository) { }
     
-    createLike = async ({userId, postId}: LikePostDTO):Promise<void>=>{
+    createLike = async ({userId, postId}: InputLikePostDTO):Promise<void>=>{
         try{
             if (!userId) {
                 throw new CustomError(400, "Params invalid! userId");
