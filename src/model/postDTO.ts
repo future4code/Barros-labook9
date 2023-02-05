@@ -17,3 +17,9 @@ export interface PostCreateDTO {
     type: TypePost, 
     authorId: string
 }
+
+export interface LikePostDTO{
+    id: string;
+    userId: string;
+    postId: string
+}
