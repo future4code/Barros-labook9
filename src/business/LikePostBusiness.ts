@@ -35,4 +35,24 @@ export class LikePostBusiness{
             throw new CustomError(error.statusCode, error.message)
         }
     }
+
+    unlikePost = async ({ userId, postId }: InputLikePostDTO) => {
+        try {
+
+            if (!userId || !postId) {
+                throw new CustomError(400, "invalid! userId or postId");
+            }
+
+            const verificationlike = await this.likePostDatabase.getAll(userId, postId)
+
+            if (typeof verificationlike === "undefined"){
+                throw new CustomError(400, "like not exists");
+            } else {
+                await this.likePostDatabase.unlike(userId, postId)
+            }
+
+        } catch (error: any) {
+            throw new CustomError(error.statusCode, error.message)
+        }
+    }
 }

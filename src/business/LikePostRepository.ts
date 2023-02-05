@@ -5,5 +5,7 @@ export interface LikePostRepository{
 
     getAll (userId: string, postId: string):Promise<string>
 
+    unlike (userId:string, postId:string):Promise<void>
+
 
 }

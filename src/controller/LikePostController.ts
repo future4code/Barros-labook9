@@ -15,7 +15,7 @@ export class LikePostController{
             }
             await this.likePostBusiness.createLike(insertLike)
 
-            res.status(200).send("like created successfully!")
+            res.status(200).send("friendship created successfully!")
         } catch (error: any) {
             res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
         }

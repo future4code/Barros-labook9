@@ -35,4 +35,18 @@ export class LikePostDatabase extends BaseDatabase{
         }
     }
 
+    unlike =async(userId:string, postId:string):Promise<void>=>{
+
+        try{
+
+         await LikePostDatabase.connection()
+              .delete()
+              .from (LikePostDatabase.TABLE_NAME)
+              .where({ user_id:userId, postId:postId })
+
+        }catch(error:any){
+            throw new CustomError(error.statusCode, error.message)
+        }
+    } 
+
 }
