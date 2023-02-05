@@ -11,7 +11,7 @@ export class LikePostDatabase extends BaseDatabase{
             await LikePostDatabase.connection.insert({
                 id: id,
                 user_id: userId,
-               post_id: postId
+                post_id: postId
             }).into(LikePostDatabase.TABLE_NAME)
 
         } catch (error: any) {
