@@ -30,3 +30,4 @@ Astrodev</br>
 ✅  Desfazer amizade;</br>
 ✅  Ver todo o feed somente dos amigos;</br>
 ✅  Curtir post;</br>
+✅  Descurtir like;</br>
