@@ -18,5 +18,21 @@ export class LikePostDatabase extends BaseDatabase{
             throw new CustomError(error.statusCode, error.message)
         }
     }
-    
+
+    getAll = async (userId: string, postId: string) => {
+        try {
+            const result = await LikePostDatabase.connection()
+                .select("*")
+                .from(LikePostDatabase.TABLE_NAME)
+                .where({
+                    user_id: userId,
+                    post_id: postId
+                })
+                
+            return (result[0])
+        } catch (error: any) {
+            throw new CustomError(error.statusCode, error.message)
+        }
+    }
+
 }
