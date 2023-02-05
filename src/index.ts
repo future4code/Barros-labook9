@@ -1,6 +1,7 @@
 import { app } from "./app"
 import { feedRouter } from "./routes/feedRouter"
 import { friendRouter } from "./routes/friendRouter"
+import { likepostRouter } from "./routes/likeRouter"
 import { postRouter } from "./routes/postRouter"
 import { userRouter } from "./routes/userRouter"
 
@@ -21,26 +22,4 @@ app.use("/feed", feedRouter)
 
 app.use("", feedRouter)
 
-
-
-
-/**************************** TYPES ******************************/
-
-type authenticationData = {
-   id: string
-}
-
-
-enum POST_TYPES {
-   NORMAL = "normal",
-   EVENT = "event"
-}
-
-type post = {
-   id: string,
-   photo: string,
-   description: string,
-   type: POST_TYPES,
-   createdAt: Date,
-   authorId: string
-}
+app.use("",likepostRouter)
