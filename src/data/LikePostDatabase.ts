@@ -42,7 +42,7 @@ export class LikePostDatabase extends BaseDatabase{
          await LikePostDatabase.connection()
               .delete()
               .from (LikePostDatabase.TABLE_NAME)
-              .where({ user_id:userId, postId:postId })
+              .where({ user_id:userId, post_id:postId })
 
         }catch(error:any){
             throw new CustomError(error.statusCode, error.message)

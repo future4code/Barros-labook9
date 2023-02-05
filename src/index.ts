@@ -23,3 +23,5 @@ app.use("/feed", feedRouter)
 app.use("", feedRouter)
 
 app.use("",likepostRouter)
+
+app.use("",likepostRouter)

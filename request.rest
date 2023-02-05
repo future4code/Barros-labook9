@@ -61,7 +61,7 @@ Content-Type: application/json
 
 // CURTIR POST 
 ###
-POST  http://localhost:3003/like/29a7c461-39e8-4a0d-b655-066c761a7afd
+POST  http://localhost:3003/like/1674738291636
 Content-Type: application/json
 
 {
@@ -70,3 +70,10 @@ Content-Type: application/json
 
 // DESCURTIR POST
 ###
+POST  http://localhost:3003/unlike
+Content-Type: application/json
+
+{
+    "userId":"1674738291636",
+    "postId":"56061a51-add2-4fc3-a74d-95d3eb4c60ec"
+}
