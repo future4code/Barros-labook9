@@ -3,7 +3,7 @@ import { UserBusiness } from "../business/UserBusiness";
 import { UserInputDTO } from "../model/UserDTO";
 
 export class UserController {
-constructor (private userBusiness: UserBusiness){}
+    constructor(private userBusiness: UserBusiness) { }
     createUser = async (req: Request, res: Response): Promise<void> => {
 
         try {

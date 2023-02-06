@@ -29,7 +29,7 @@ export class PostController {
             const id = req.params.id as string
 
             const postId = await this.postBusiness.getAllPost(id)
-           
+
             res.status(200).send(postId)
 
         } catch (error: any) {
@@ -39,33 +39,29 @@ export class PostController {
 
     }
 
-    feedFriend=async(req:Request, res:Response)=>{
-        try{
+    feedFriend = async (req: Request, res: Response) => {
+        try {
             const userId = req.params.userId as string
-         
+
             const postFriend = await this.postBusiness.feedFriend(userId)
 
             res.status(200).send(postFriend)
 
-        }catch(error:any){
+        } catch (error: any) {
             res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
         }
     }
 
-    PostType=async(req:Request, res:Response)=>{
-        try{
+    PostType = async (req: Request, res: Response) => {
+        try {
 
-        const type = req.body.type as string
-           
-            
-        const postType = await this.postBusiness.PostType(type)
-        // console.log(postType);
-        res.status(200).send(postType)
+            const type = req.body.type as string
 
 
-        }catch(error:any){
-            console.log("caiu aqu");
-            
+            const postType = await this.postBusiness.PostType(type)
+
+            res.status(200).send(postType)
+        } catch (error: any) {
             res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
         }
     }

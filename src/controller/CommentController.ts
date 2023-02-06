@@ -2,14 +2,14 @@ import { Request, Response } from "express";
 import { CommentBusiness } from "../business/CommentBusiness";
 import { InputCommentDTO } from "../model/postDTO";
 
-export class CommentController{
+export class CommentController {
     constructor(private commentBusiness: CommentBusiness) { }
 
-    createComment=async(req:Request, res:Response)=>{
-        try{
-            const {comment, userId, postId} = req.body;
+    createComment = async (req: Request, res: Response):Promise<void> => {
+        try {
+            const { comment, userId, postId } = req.body;
 
-            const insertComment:InputCommentDTO =  {
+            const insertComment: InputCommentDTO = {
                 comment,
                 userId,
                 postId
@@ -18,7 +18,7 @@ export class CommentController{
 
             res.status(201).send("Comment successfully added!")
 
-        }catch(error:any){
+        } catch (error: any) {
             res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
         }
     }
