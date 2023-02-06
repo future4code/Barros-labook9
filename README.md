@@ -32,7 +32,7 @@ Astrodev</br>
 ✅  Curtir post;</br>
 ✅  Descurtir like;</br>
 ✅  Comentar posts;</br>
-⬛  Paginar feed; </br>
+✅  Paginar feed; </br>
 
 **EXTRA:**</br>
 ✅  Ver todos usuarios.</br>
