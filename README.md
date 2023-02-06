@@ -31,3 +31,43 @@ Astrodev</br>
 ✅  Ver todo o feed somente dos amigos;</br>
 ✅  Curtir post;</br>
 ✅  Descurtir like;</br>
+✅  Comentar posts;</br>
+⬛  Paginar feed; </br>
+
+**EXTRA:**</br>
+✅  Ver todos usuarios.</br>
+
+---
+
+## Tecnologias:
+
+- Typescript;
+- MySQL;
+- nodeJS;
+- Express;
+- Axios;
+- dotenv
+
+---
+
+## Rodar projeto:
+
+- Clonar repositório,
+- npm install,
+- configurar arquivo *.env*</br>
+*DB_HOST =</br> DB_USER = ""</br> DB_PASS =""</br> DB_NAME =""</br>*
+
+- arquivo **queries.sql** possui as tabelas utilizadas(podendo ser criadas no próprio aquivo ou no MySQL)
+- npm run start para rodar projeto podendo ser usado no Postman ou usar link Render.
+
+---
+
+## Link Render:
+
+**[----LINK AQUI----]()**
+
+---
+
+### Documentação Postman:
+
+**[----DOCUMENTAÇÃO AQUI----]()**
