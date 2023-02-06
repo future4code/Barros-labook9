@@ -20,4 +20,15 @@ export class UserDatabase extends BaseDatabase implements UseRepository {
         }
     }
 
+    get = async()=>{
+        try{
+        const result = await UserDatabase.connection.raw(`
+        SELECT * FROM ${UserDatabase.TABLE_NAME}
+        `)
+        return (result[0])
+        }catch(error:any){
+            throw new CustomError(error.statusCode, error.message)
+        }
+    }
+
 }

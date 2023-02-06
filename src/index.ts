@@ -35,3 +35,6 @@ app.use("",likepostRouter)
 
 // adicionar comentarios
 app.use("/post", commentRouter)
+
+// buscar todos usuarios
+app.use("", userRouter)

@@ -12,3 +12,5 @@ const userBusiness = new UserBusiness(userDatabase)
 const userController = new UserController(userBusiness)
 
 userRouter.post("/users", (req, res) => userController.createUser(req, res))
+
+userRouter.get("/users", (req, res) => userController.getAllUser(req, res))

@@ -22,4 +22,16 @@ export class UserController {
         }
     }
 
+    getAllUser = async (req: Request, res: Response) => {
+        try {
+            const reuslt = await this.userBusiness.getAllUser()
+
+            res.status(200).send(reuslt)
+
+        } catch (error: any) {
+            res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
+        }
+
+    }
+
 }

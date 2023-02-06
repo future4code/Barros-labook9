@@ -30,4 +30,15 @@ export class UserBusiness {
             throw new CustomError(error.statusCode, error.message)
         }
     }
+
+    getAllUser = async ()=>{
+        try{
+            const result = await this.userDatabase.get()
+
+            return result
+
+        }catch(error:any){
+            throw new CustomError(error.statusCode, error.message)
+        }
+    }
 }

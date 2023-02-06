@@ -62,7 +62,6 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
             `)
 
             return (result[0])
-
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }

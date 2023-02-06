@@ -88,3 +88,8 @@ Content-Type: application/json
     "userId":"1674738291636",
     "postId":"56061a51-add2-4fc3-a74d-95d3eb4c60ec"
 }
+
+###
+// BUSCAR TODOS USUARIOS
+GET http://localhost:3003/users
+Content-Type: application/json
