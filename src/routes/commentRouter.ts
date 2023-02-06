@@ -11,4 +11,4 @@ const commentBusiness = new CommentBusiness(commentDatabase)
 
 const commentController = new CommentController(commentBusiness)
 
-commentRouter.post("/comment",(req,res)=> commentController.createComment(req,res))
+commentRouter.post("/comment", (req, res) => commentController.createComment(req, res))
