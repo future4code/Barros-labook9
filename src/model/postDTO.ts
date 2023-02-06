@@ -28,3 +28,17 @@ export interface InputLikePostDTO{
     userId: string;
     postId: string
 }
+
+export interface CommentDTO{
+    id: string;
+    comment:string;
+    userId: string;
+    postId: string
+}
+
+
+export interface InputCommentDTO{
+    comment:string;
+    userId: string;
+    postId: string
+}
