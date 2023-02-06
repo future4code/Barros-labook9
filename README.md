@@ -29,6 +29,7 @@ Astrodev</br>
 ✅  Fazer amizade;</br>
 ✅  Desfazer amizade;</br>
 ✅  Ver todo o feed somente dos amigos;</br>
+✅  Ver posts por tipo "normal" ou "event";</br>
 ✅  Curtir post;</br>
 ✅  Descurtir like;</br>
 ✅  Comentar posts;</br>
@@ -64,7 +65,7 @@ Astrodev</br>
 
 ## Link Render:
 
-**[----LINK AQUI----]()**
+**[----LINK AQUI----](https://labbok.onrender.com)**
 
 ---
 
