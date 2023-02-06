@@ -13,4 +13,4 @@ const likepostController = new LikePostController(likepostBusiness)
 
 likepostRouter.post("/like/:userId", (req, res) => likepostController.createLike(req, res))
 
-likepostRouter.post("/unlike", (req, res) => likepostController.unlikePost(req, res))
+likepostRouter.delete("/unlike", (req, res) => likepostController.unlikePost(req, res))
