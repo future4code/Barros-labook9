@@ -66,4 +66,6 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
             throw new CustomError(error.statusCode, error.message)
         }
     }
+
+
 }
