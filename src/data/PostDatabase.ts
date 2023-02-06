@@ -45,7 +45,7 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
             JOIN labook_users user ON post.author_id = user.id
             JOIN labook_friend friend ON post.author_id = friend.user_add_id OR post.author_id = friend.user_id
             WHERE (friend.user_id=${userId} OR friend.user_add_id=${userId}) AND post.author_id <> ${userId}
-            ORDER BY created_at DESC;
+            ORDER BY created_at DESC LIMIT 0,5;
             `)
             return (result[0])
         } catch (error: any) {
