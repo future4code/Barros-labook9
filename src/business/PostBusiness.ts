@@ -1,4 +1,3 @@
-import { PostDatabase } from "../data/PostDatabase";
 import { CustomError } from "../error/CustomError";
 import { PostCreateDTO, PostInputDTO } from "../model/postDTO";
 import { generateId } from "../services/idGenerator";
@@ -6,9 +5,8 @@ import { PostRepository } from "./PostRepository";
 
 export class PostBusiness {
     constructor(private postDatabase: PostRepository) { }
-    // postDatabaseteste = new PostDatabase();
 
-    createPost = async ({ photo, description, type, authorId }: PostInputDTO) => {
+    createPost = async ({ photo, description, type, authorId }: PostInputDTO): Promise<void> => {
         try {
             if (!photo || !description || !type || !authorId) {
                 throw new CustomError(400, "Body invalid! photo or description or type or authorId.");

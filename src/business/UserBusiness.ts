@@ -4,9 +4,9 @@ import { generateId } from "../services/idGenerator";
 import { UseRepository } from "./UserRepository";
 
 export class UserBusiness {
-  constructor(private  userDatabase:UseRepository){}
+    constructor(private userDatabase: UseRepository) { }
 
-    createUser = async ({ name, email, password }: UserInputDTO) => {
+    createUser = async ({ name, email, password }: UserInputDTO): Promise<void> => {
         try {
             if (!name || !email || !password) {
                 throw new CustomError(400, "Body invalid! name or email or password.");
@@ -14,7 +14,7 @@ export class UserBusiness {
             if (password.length <= 6) {
                 throw new CustomError(400, "Password must be at least 7 characters");
             }
-           
+
             const id = generateId()
 
             const insertUser: UserCreateDTO = {

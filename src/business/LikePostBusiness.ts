@@ -3,11 +3,11 @@ import { InputLikePostDTO, LikePostDTO } from "../model/postDTO";
 import { generateId } from "../services/idGenerator";
 import { LikePostRepository } from "./LikePostRepository";
 
-export class LikePostBusiness{
+export class LikePostBusiness {
     constructor(private likePostDatabase: LikePostRepository) { }
-    
-    createLike = async ({userId, postId}: InputLikePostDTO):Promise<void>=>{
-        try{
+
+    createLike = async ({ userId, postId }: InputLikePostDTO): Promise<void> => {
+        try {
             if (!userId) {
                 throw new CustomError(400, "Params invalid! userId");
             }
@@ -25,13 +25,13 @@ export class LikePostBusiness{
             const insertLike: LikePostDTO = {
                 id: id,
                 userId: userId,
-                postId : postId,
+                postId: postId,
             }
 
             await this.likePostDatabase.create(insertLike)
 
 
-        }catch(error:any){
+        } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }
     }
@@ -45,7 +45,7 @@ export class LikePostBusiness{
 
             const verificationlike = await this.likePostDatabase.getAll(userId, postId)
 
-            if (typeof verificationlike === "undefined"){
+            if (typeof verificationlike === "undefined") {
                 throw new CustomError(400, "like not exists");
             } else {
                 await this.likePostDatabase.unlike(userId, postId)

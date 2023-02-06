@@ -6,7 +6,7 @@ import { generateId } from "../services/idGenerator";
 export class FriendBusiness {
     constructor(private friendDatabase: FriendRepository) { }
 
-    createFriend = async ({ userId, userAddId }: InputFriendDTO) => {
+    createFriend = async ({ userId, userAddId }: InputFriendDTO):Promise<void> => {
         try {
             if (!userId) {
                 throw new CustomError(400, "Params invalid! userId");
@@ -35,7 +35,7 @@ export class FriendBusiness {
         }
     }
 
-    deleteFriend = async ({ userId, userAddId }: InputFriendDTO) => {
+    deleteFriend = async ({ userId, userAddId }: InputFriendDTO):Promise<void> => {
         try {
 
             if (!userId || !userAddId) {
@@ -44,7 +44,7 @@ export class FriendBusiness {
 
             const verificationUserId = await this.friendDatabase.getAll(userId, userAddId)
 
-            if (typeof verificationUserId === "undefined"){
+            if (typeof verificationUserId === "undefined") {
                 throw new CustomError(400, "Friendship not exists");
             } else {
                 await this.friendDatabase.delete(userId, userAddId)

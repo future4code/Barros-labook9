@@ -12,7 +12,7 @@ export class CommentBusiness {
                 throw new CustomError(400, "invalid! comment or userId or postId");
             }
 
-            if(comment === ""){
+            if (comment === "") {
                 throw new CustomError(400, "Empty comment!");
             }
 
