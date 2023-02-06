@@ -1,4 +1,3 @@
-import { PostDatabase } from "../data/PostDatabase";
 import { CustomError } from "../error/CustomError";
 import { PostCreateDTO, PostInputDTO } from "../model/postDTO";
 import { generateId } from "../services/idGenerator";
@@ -6,14 +5,15 @@ import { PostRepository } from "./PostRepository";
 
 export class PostBusiness {
     constructor(private postDatabase: PostRepository) { }
-    // postDatabase = new PostDatabase();
 
-    createPost = async ({ photo, description, type, authorId }: PostInputDTO) => {
+    createPost = async ({ photo, description, type, authorId }: PostInputDTO): Promise<void> => {
         try {
             if (!photo || !description || !type || !authorId) {
                 throw new CustomError(400, "Body invalid! photo or description or type or authorId.");
             }
-
+            if (type.toUpperCase() !== "normal".toUpperCase() && type.toUpperCase() !== "event".toUpperCase()) {
+                throw new CustomError(400, "Type invalid, normal or event.");
+            }
             const postId = generateId()
 
             const insertPost: PostCreateDTO = {
@@ -38,7 +38,7 @@ export class PostBusiness {
             if (postId.length < 0) {
                 throw new CustomError(404, "Post not found");
             }
-         
+
             return (postId)
 
         } catch (error: any) {
@@ -46,17 +46,28 @@ export class PostBusiness {
         }
     }
 
-    feedFriend=async (userId:string) =>{
-        try{
-        const postDatabase = new PostDatabase()
+    feedFriend = async (userId: string) => {
+        try {
 
-            console.log(userId);
-       const result = await postDatabase.feed(userId)
-       console.log(result);
-       
-            return(result)
+            const result = await this.postDatabase.feed(userId)
 
-        }catch(error:any){
+            return (result)
+
+        } catch (error: any) {
+            throw new CustomError(error.statusCode, error.message)
+        }
+    }
+
+    PostType = async (type: string) => {
+        try {
+            if (type.toUpperCase() !== "normal".toUpperCase() && type.toUpperCase() !== "event".toUpperCase()) {
+                throw new CustomError(400, "Type invalid, normal or event.");
+            }
+            const result = await this.postDatabase.getType(type)
+
+            return (result)
+
+        } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }
     }

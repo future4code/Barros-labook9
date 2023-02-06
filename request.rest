@@ -1,3 +1,4 @@
+//CRIA USER
 POST http://localhost:3003/users
 Content-Type: application/json
 
@@ -8,21 +9,23 @@ Content-Type: application/json
 }
 
 ###
-
+//CRIA POST
 POST http://localhost:3003/post
 Content-Type: application/json
 
 {
     "photo": "https://i.picsum.photos/id/0/5618/3744.jpg",
-    "description": "POST  BANANINHA NÃO AMIGA",
-    "type":"NORMAL",
-    "authorId": "e7035d9c-24db-4e94-bbbb-ea676319c325"
+    "description": "POST  evten CAMILA 2",
+    "type":"EVENT",
+    "authorId": "29a7c461-39e8-4a0d-b655-066c761a7afd"
 }
 
 ###
+//BUSCA POSTS DE UM USER ESPECIFICO
 GET http://localhost:3003/posts/1674738291636
 
 ###
+//CRIA AMIZADE
 POST http://localhost:3003/friend/1674738291636
 Content-Type: application/json
 
@@ -31,6 +34,7 @@ Content-Type: application/json
 }
 
 ###
+//DELETA AMIZADE
 DELETE http://localhost:3003/friend/delete
 Content-Type: application/json
 
@@ -40,22 +44,53 @@ Content-Type: application/json
 }
 
 ###
-# GET http://localhost:3003/feed/friend
-# Content-Type: application/json
 
-# {
-
-#     "userId":"1674738291636",
-#     "userAddId": "b80230ad-df74-4142-b05c-70c6b865e82f"
-
-# }
-
-# GET http://localhost:3003/feed
-# Content-Type: application/json
-
-# {
-#     "userId":"1674738291636"
-# }
-
+//BUSCA FEED DE AMIGOS DE UM DETERMINADO USER
 GET http://localhost:3003/feed/1674738291636
 Content-Type: application/json
+
+
+// BUSCAR FEED POR TYPE
+###
+GET http://localhost:3003/post/type
+Content-Type: application/json
+
+{
+    "type":"NORMAL"
+}
+
+// CURTIR POST 
+###
+POST  http://localhost:3003/like/1674738291636
+Content-Type: application/json
+
+{
+    "postId":"56061a51-add2-4fc3-a74d-95d3eb4c60ec"
+}
+
+// DESCURTIR POST
+###
+POST  http://localhost:3003/unlike
+Content-Type: application/json
+
+{
+    "userId":"1674738291636",
+    "postId":"56061a51-add2-4fc3-a74d-95d3eb4c60ec"
+}
+
+//COMENTAR POST
+### 
+POST http://localhost:3003/post/comment
+Content-Type: application/json
+
+{
+    "comment": "Novamente aqui",
+    "userId":"1674738291636",
+    "postId":"56061a51-add2-4fc3-a74d-95d3eb4c60ec"
+}
+
+###
+// BUSCAR TODOS USUARIOS
+GET http://localhost:3003/users
+Content-Type: application/json
+

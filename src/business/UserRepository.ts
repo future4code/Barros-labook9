@@ -1,7 +1,8 @@
 import { UserCreateDTO } from "../model/UserDTO";
 
-export interface UseRepository{
+export interface UseRepository {
 
-    create ({ id, name, email, password }: UserCreateDTO):Promise<void>
+    create({ id, name, email, password }: UserCreateDTO): Promise<void>
 
+    get(): Promise<[]>
 }

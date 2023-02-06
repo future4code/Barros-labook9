@@ -5,5 +5,5 @@ export interface FriendRepository {
 
     getAll(userId: string, userAddId: string): Promise<string>
 
-    delete(userId:string, userAddId:string):Promise<void>
+    delete(userId: string, userAddId: string): Promise<void>
 }

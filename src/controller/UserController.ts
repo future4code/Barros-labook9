@@ -3,7 +3,7 @@ import { UserBusiness } from "../business/UserBusiness";
 import { UserInputDTO } from "../model/UserDTO";
 
 export class UserController {
-constructor (private userBusiness: UserBusiness){}
+    constructor(private userBusiness: UserBusiness) { }
     createUser = async (req: Request, res: Response): Promise<void> => {
 
         try {
@@ -20,6 +20,18 @@ constructor (private userBusiness: UserBusiness){}
         } catch (error: any) {
             res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
         }
+    }
+
+    getAllUser = async (req: Request, res: Response) => {
+        try {
+            const result = await this.userBusiness.getAllUser()
+
+            res.status(200).send(result)
+
+        } catch (error: any) {
+            res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
+        }
+
     }
 
 }

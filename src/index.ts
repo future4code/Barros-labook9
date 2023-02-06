@@ -1,40 +1,40 @@
 import { app } from "./app"
+import { commentRouter } from "./routes/commentRouter"
+import { feedRouter } from "./routes/feedRouter"
 import { friendRouter } from "./routes/friendRouter"
+import { likepostRouter } from "./routes/likeRouter"
 import { postRouter } from "./routes/postRouter"
 import { userRouter } from "./routes/userRouter"
 
-
+// criar usuario
 app.use("", userRouter)
 
+// criar post
 app.use("", postRouter)
 
+// buscar post de um usuario
 app.use("/posts", postRouter)
 
+// criar amizade
 app.use("/friend", friendRouter)
 
+// deletar amizade
 app.use("/friend", friendRouter)
 
-app.use("/feed", postRouter)
+// buscar post de amigos
+app.use("/feed", feedRouter)
 
-// app.use("", postRouter)
+// buscar post por type
+app.use("", feedRouter)
 
-/**************************** TYPES ******************************/
+//curtir post
+app.use("",likepostRouter)
 
-type authenticationData = {
-   id: string
-}
+// descurtir post
+app.use("",likepostRouter)
 
+// adicionar comentarios
+app.use("/post", commentRouter)
 
-enum POST_TYPES {
-   NORMAL = "normal",
-   EVENT = "event"
-}
-
-type post = {
-   id: string,
-   photo: string,
-   description: string,
-   type: POST_TYPES,
-   createdAt: Date,
-   authorId: string
-}
+// buscar todos usuarios
+app.use("", userRouter)

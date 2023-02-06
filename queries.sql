@@ -22,4 +22,21 @@
          user_add_id VARCHAR(255) ,
          FOREIGN KEY (user_id) REFERENCES labook_users (id),
          FOREIGN KEY (user_add_id) REFERENCES labook_users (id)
+      );
+
+      CREATE TABLE IF NOT EXISTS labook_like(
+         id VARCHAR (255) PRIMARY KEY,
+         user_id VARCHAR (255) NOT NULL,
+         post_id VARCHAR (255) NOT NULL,
+         FOREIGN KEY (user_id) REFERENCES labook_users (id),
+         FOREIGN KEY (post_id) REFERENCES labook_posts (id)
+      );
+
+      CREATE TABLE IF NOT EXISTS labook_comments(
+         id VARCHAR (255) PRIMARY KEY,
+         comment TEXT NOT NULL,
+         user_id VARCHAR (255) NOT NULL,
+         post_id VARCHAR (255) NOT NULL,
+         FOREIGN KEY (user_id) REFERENCES labook_users (id),
+         FOREIGN KEY (post_id) REFERENCES labook_posts (id)
       )
