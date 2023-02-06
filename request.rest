@@ -15,14 +15,14 @@ Content-Type: application/json
 
 {
     "photo": "https://i.picsum.photos/id/0/5618/3744.jpg",
-    "description": "POST  evten CAMILA 2",
+    "description": "POST CAMILA 5 para testar paginação",
     "type":"EVENT",
     "authorId": "29a7c461-39e8-4a0d-b655-066c761a7afd"
 }
 
 ###
-//BUSCA POSTS DE UM USER ESPECIFICO
-GET http://localhost:3003/posts/1674738291636
+//BUSCA POSTS DE UM USER ESPECIFICO**
+GET http://localhost:3003/posts/1674741235941
 
 ###
 //CRIA AMIZADE
@@ -90,7 +90,7 @@ Content-Type: application/json
 }
 
 ###
-// BUSCAR TODOS USUARIOS
+// BUSCAR TODOS USUARIOS**
 GET http://localhost:3003/users
 Content-Type: application/json
 
