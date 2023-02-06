@@ -71,4 +71,4 @@ Astrodev</br>
 
 ### Documentação Postman:
 
-**[----DOCUMENTAÇÃO AQUI----]()**
+**[----DOCUMENTAÇÃO AQUI----](https://documenter.getpostman.com/view/25513685/2s935pohsW)**
