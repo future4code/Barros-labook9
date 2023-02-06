@@ -21,8 +21,8 @@ Content-Type: application/json
 }
 
 ###
-//BUSCA POSTS DE UM USER ESPECIFICO
-GET http://localhost:3003/posts/1674738291636
+//BUSCA POSTS DE UM USER ESPECIFICO**
+GET http://localhost:3003/posts/1674741235941
 
 ###
 //CRIA AMIZADE
@@ -90,7 +90,7 @@ Content-Type: application/json
 }
 
 ###
-// BUSCAR TODOS USUARIOS
+// BUSCAR TODOS USUARIOS**
 GET http://localhost:3003/users
 Content-Type: application/json
 

@@ -25,7 +25,7 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
         try {
 
             const result = await PostDatabase.connection.raw(`
-            SELECT * FROM ${PostDatabase.TABLE_NAME} WHERE ${id}
+            SELECT * FROM ${PostDatabase.TABLE_NAME} WHERE id="${id}"
             `)
 
             return (result[0])
