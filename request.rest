@@ -77,3 +77,14 @@ Content-Type: application/json
     "userId":"1674738291636",
     "postId":"56061a51-add2-4fc3-a74d-95d3eb4c60ec"
 }
+
+//COMENTAR POST
+### 
+POST http://localhost:3003/post/comment
+Content-Type: application/json
+
+{
+    "comment": "Novamente aqui",
+    "userId":"1674738291636",
+    "postId":"56061a51-add2-4fc3-a74d-95d3eb4c60ec"
+}

@@ -13,12 +13,10 @@ export class CommentBusiness {
             }
 
             if(comment === ""){
-                throw new CustomError(400, "invalid! comment or userId or postId");
+                throw new CustomError(400, "Empty comment!");
             }
 
-            
             const id = generateId()
-
 
             const insertComment: CommentDTO = {
                 id: id,
